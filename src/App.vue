@@ -1,87 +1,55 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="Beginning Test You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/aboutOriginal">About</RouterLink>
-        <RouterLink to="/about1">About1</RouterLink>
-      </nav>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="leftHeader">
+      <RouterLink to="/"><i class="bi bi-apple" style="font-size: 35px;"></i></RouterLink>
+    </div>  
+    <div class="rightHeader">
+      <RouterLink to="/About">公司簡介 About</RouterLink>
+      <RouterLink to="/CertificationPatents">認證專利 Certification Patents</RouterLink>
+      <RouterLink to="/Product">產品介紹 Product</RouterLink>
+      <RouterLink to="/Contact">聯繫我們 Contact</RouterLink> 
     </div>
-  </header>
-
+    <div class="otherLinks">
+      <RouterLink to="/"><i class="bi bi-house-door-fill" style="font-size: 35px;"></i>首頁 ｜ HOME</RouterLink>
+      <RouterLink to="/"><i class="bi bi-facebook" style="font-size: 35px;"></i></RouterLink>
+      <RouterLink to="/"><i class="bi bi-line" style="font-size: 35px;"></i></RouterLink>
+    </div>
+  </nav>
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+  .header {
+  padding: 60px;
+  font-family: "微軟正黑體";
   text-align: center;
-  margin-top: 2rem;
+  color: black;
+  font-size: 30px;
+  background: palevioletred;
+}
+.leftHeader{
+  top:  10%;
+  float: left;
+  width: 10%;
+}
+.rightHeader{
+  width: 70%; 
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-evenly;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.otherLinks{
+  position: absolute;
+  right: 0;
+  width: 20%;
+  float: right;
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>
-},
+}
