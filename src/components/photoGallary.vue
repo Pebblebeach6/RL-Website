@@ -1,23 +1,25 @@
 <template>
-    <div class="vueGallery">
-        <div class="activePhoto" :style="'background-image: url('+photos[activePhoto]+');'">
-        <button type="button" aria-label="Previous Photo" class="btn btn-light previous" @click="previousPhoto()">
-            <i class="bi bi-arrow-left-square"></i>
-        </button>
-        <button type="button" aria-label="Next Photo" class="btn btn-light next" @click="nextPhoto()" >
-            <i class="bi bi-arrow-right-square"></i>
-        </button>
+    <div class="containers">
+        <div class="vueGallery">
+            <div class="activePhoto" :style="'background-image: url('+photos[activePhoto]+');'">
+            <button type="button" aria-label="Previous Photo" class="btn btn-light previous" @click="previousPhoto()">
+                <i class="bi bi-arrow-left-square"></i>
+            </button>
+            <button type="button" aria-label="Next Photo" class="btn btn-light next" @click="nextPhoto()" >
+                <i class="bi bi-arrow-right-square"></i>
+            </button>
+            </div>
+            <div class="thumbnails">
+                <div
+                    v-for="(photo, index) in photos"
+                    :src="photo"
+                    :key="index"
+                    @click="activePhoto = index"
+                    :class="{'active': activePhoto == index}" :style="'background-image: url('+photo+')'">
+                </div>
+            </div>
         </div>
-        <div class="thumbnails">
-        <div
-            v-for="(photo, index) in photos"
-            :src="photo"
-            :key="index"
-            @click="activePhoto = index"
-            :class="{'active': activePhoto == index}" :style="'background-image: url('+photo+')'">
-        </div>
-        </div>
-  </div>
+    </div>
 </template>
 <script>
     export default{
@@ -57,10 +59,18 @@
     }
 </script>
 <style>
-
+.containers {
+  padding: 6px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-height: 30%;
+  box-shadow: 0 5px 8px #0000007a;
+}
 .vueGallery {
   .activePhoto {
     width: 100%;
+    max-height: 30px;
     margin-bottom: 5px;
     padding-bottom: 65%;
     background-size: cover;

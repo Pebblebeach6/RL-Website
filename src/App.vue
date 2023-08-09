@@ -35,12 +35,14 @@ import { RouterLink, RouterView } from 'vue-router'
   top:  10%;
   float: left;
   width: 10%;
+  margin-left: 3%;
 }
 .rightHeader{
   width: 70%; 
   transform: translateY(-50%);
   display: flex;
   justify-content: space-evenly;
+  margin-top: 3%;
 }
 
 .otherLinks{
